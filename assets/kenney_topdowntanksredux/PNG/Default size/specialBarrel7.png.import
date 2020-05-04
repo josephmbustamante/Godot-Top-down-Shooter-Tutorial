@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/specialBarrel7.png-fb656a32babb0d282dfe047dbe0403ab.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/kenney_topdowntanksredux/PNG/Default size/specialBarrel7.png"
+dest_files=[ "res://.import/specialBarrel7.png-fb656a32babb0d282dfe047dbe0403ab.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

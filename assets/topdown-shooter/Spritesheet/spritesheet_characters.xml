@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="sprites.png">
+	<!--
+	Created with ShoeBox
+	http://renderhjs.net/shoebox/
+	-->
+	<SubTexture name="hitman1_gun.png"	x="164"	y="88"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="hitman1_hold.png"	x="386"	y="88"	width="35"	height="43" frameX="-0" frameY="-0" frameWidth="35" frameHeight="43"/>
+	<SubTexture name="hitman1_machine.png"	x="214"	y="44"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="hitman1_reload.png"	x="313"	y="132"	width="39"	height="43" frameX="-0" frameY="-0" frameWidth="39" frameHeight="43"/>
+	<SubTexture name="hitman1_silencer.png"	x="0"	y="132"	width="54"	height="43" frameX="-0" frameY="-0" frameWidth="54" frameHeight="43"/>
+	<SubTexture name="hitman1_stand.png"	x="426"	y="176"	width="33"	height="43" frameX="-0" frameY="-0" frameWidth="33" frameHeight="43"/>
+	<SubTexture name="manBlue_gun.png"	x="263"	y="132"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="manBlue_hold.png"	x="390"	y="132"	width="35"	height="43" frameX="-0" frameY="-0" frameWidth="35" frameHeight="43"/>
+	<SubTexture name="manBlue_machine.png"	x="212"	y="176"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="manBlue_reload.png"	x="309"	y="0"	width="39"	height="43" frameX="-0" frameY="-0" frameWidth="39" frameHeight="43"/>
+	<SubTexture name="manBlue_silencer.png"	x="58"	y="0"	width="54"	height="43" frameX="-0" frameY="-0" frameWidth="54" frameHeight="43"/>
+	<SubTexture name="manBlue_stand.png"	x="426"	y="132"	width="33"	height="43" frameX="-0" frameY="-0" frameWidth="33" frameHeight="43"/>
+	<SubTexture name="manBrown_gun.png"	x="262"	y="176"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="manBrown_hold.png"	x="388"	y="0"	width="35"	height="43" frameX="-0" frameY="-0" frameWidth="35" frameHeight="43"/>
+	<SubTexture name="manBrown_machine.png"	x="214"	y="88"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="manBrown_reload.png"	x="312"	y="176"	width="39"	height="43" frameX="-0" frameY="-0" frameWidth="39" frameHeight="43"/>
+	<SubTexture name="manBrown_silencer.png"	x="0"	y="176"	width="54"	height="43" frameX="-0" frameY="-0" frameWidth="54" frameHeight="43"/>
+	<SubTexture name="manBrown_stand.png"	x="459"	y="44"	width="33"	height="43" frameX="-0" frameY="-0" frameWidth="33" frameHeight="43"/>
+	<SubTexture name="manOld_gun.png"	x="216"	y="0"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="manOld_hold.png"	x="422"	y="88"	width="35"	height="43" frameX="-0" frameY="-0" frameWidth="35" frameHeight="43"/>
+	<SubTexture name="manOld_machine.png"	x="213"	y="132"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="manOld_reload.png"	x="307"	y="44"	width="39"	height="43" frameX="-0" frameY="-0" frameWidth="39" frameHeight="43"/>
+	<SubTexture name="manOld_silencer.png"	x="55"	y="132"	width="54"	height="43" frameX="-0" frameY="-0" frameWidth="54" frameHeight="43"/>
+	<SubTexture name="manOld_stand.png"	x="460"	y="132"	width="33"	height="43" frameX="-0" frameY="-0" frameWidth="33" frameHeight="43"/>
+	<SubTexture name="robot1_gun.png"	x="164"	y="44"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="robot1_hold.png"	x="423"	y="44"	width="35"	height="43" frameX="-0" frameY="-0" frameWidth="35" frameHeight="43"/>
+	<SubTexture name="robot1_machine.png"	x="166"	y="0"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="robot1_reload.png"	x="306"	y="88"	width="39"	height="43" frameX="-0" frameY="-0" frameWidth="39" frameHeight="43"/>
+	<SubTexture name="robot1_silencer.png"	x="55"	y="176"	width="54"	height="43" frameX="-0" frameY="-0" frameWidth="54" frameHeight="43"/>
+	<SubTexture name="robot1_stand.png"	x="458"	y="88"	width="33"	height="43" frameX="-0" frameY="-0" frameWidth="33" frameHeight="43"/>
+	<SubTexture name="soldier1_gun.png"	x="113"	y="0"	width="52"	height="43" frameX="-0" frameY="-0" frameWidth="52" frameHeight="43"/>
+	<SubTexture name="soldier1_hold.png"	x="349"	y="0"	width="38"	height="43" frameX="-0" frameY="-0" frameWidth="38" frameHeight="43"/>
+	<SubTexture name="soldier1_machine.png"	x="110"	y="132"	width="52"	height="43" frameX="-0" frameY="-0" frameWidth="52" frameHeight="43"/>
+	<SubTexture name="soldier1_reload.png"	x="264"	y="44"	width="42"	height="43" frameX="-0" frameY="-0" frameWidth="42" frameHeight="43"/>
+	<SubTexture name="soldier1_silencer.png"	x="0"	y="0"	width="57"	height="43" frameX="-0" frameY="-0" frameWidth="57" frameHeight="43"/>
+	<SubTexture name="soldier1_stand.png"	x="353"	y="132"	width="36"	height="43" frameX="-0" frameY="-0" frameWidth="36" frameHeight="43"/>
+	<SubTexture name="survivor1_gun.png"	x="112"	y="88"	width="51"	height="43" frameX="-0" frameY="-0" frameWidth="51" frameHeight="43"/>
+	<SubTexture name="survivor1_hold.png"	x="352"	y="176"	width="37"	height="43" frameX="-0" frameY="-0" frameWidth="37" frameHeight="43"/>
+	<SubTexture name="survivor1_machine.png"	x="110"	y="176"	width="51"	height="43" frameX="-0" frameY="-0" frameWidth="51" frameHeight="43"/>
+	<SubTexture name="survivor1_reload.png"	x="264"	y="88"	width="41"	height="43" frameX="-0" frameY="-0" frameWidth="41" frameHeight="43"/>
+	<SubTexture name="survivor1_silencer.png"	x="0"	y="88"	width="56"	height="43" frameX="-0" frameY="-0" frameWidth="56" frameHeight="43"/>
+	<SubTexture name="survivor1_stand.png"	x="390"	y="176"	width="35"	height="43" frameX="-0" frameY="-0" frameWidth="35" frameHeight="43"/>
+	<SubTexture name="womanGreen_gun.png"	x="58"	y="44"	width="52"	height="43" frameX="-0" frameY="-0" frameWidth="52" frameHeight="43"/>
+	<SubTexture name="womanGreen_hold.png"	x="347"	y="44"	width="38"	height="43" frameX="-0" frameY="-0" frameWidth="38" frameHeight="43"/>
+	<SubTexture name="womanGreen_machine.png"	x="111"	y="44"	width="52"	height="43" frameX="-0" frameY="-0" frameWidth="52" frameHeight="43"/>
+	<SubTexture name="womanGreen_reload.png"	x="266"	y="0"	width="42"	height="43" frameX="-0" frameY="-0" frameWidth="42" frameHeight="43"/>
+	<SubTexture name="womanGreen_silencer.png"	x="0"	y="44"	width="57"	height="43" frameX="-0" frameY="-0" frameWidth="57" frameHeight="43"/>
+	<SubTexture name="womanGreen_stand.png"	x="386"	y="44"	width="36"	height="43" frameX="-0" frameY="-0" frameWidth="36" frameHeight="43"/>
+	<SubTexture name="zoimbie1_gun.png"	x="163"	y="132"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="zoimbie1_hold.png"	x="424"	y="0"	width="35"	height="43" frameX="-0" frameY="-0" frameWidth="35" frameHeight="43"/>
+	<SubTexture name="zoimbie1_machine.png"	x="162"	y="176"	width="49"	height="43" frameX="-0" frameY="-0" frameWidth="49" frameHeight="43"/>
+	<SubTexture name="zoimbie1_reload.png"	x="346"	y="88"	width="39"	height="43" frameX="-0" frameY="-0" frameWidth="39" frameHeight="43"/>
+	<SubTexture name="zoimbie1_silencer.png"	x="57"	y="88"	width="54"	height="43" frameX="-0" frameY="-0" frameWidth="54" frameHeight="43"/>
+	<SubTexture name="zoimbie1_stand.png"	x="460"	y="0"	width="33"	height="43" frameX="-0" frameY="-0" frameWidth="33" frameHeight="43"/>
+</TextureAtlas>
