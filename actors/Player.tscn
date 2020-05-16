@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://weapons/Weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/topdown-shooter/Spritesheet/spritesheet_characters.png" type="Texture" id=3]
+[ext_resource path="res://actors/Health.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 24 )
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 80, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -8, 0 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 348, 0, 40, 44 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -8, 0 )
+shape = SubResource( 1 )
+
+[node name="Health" parent="." instance=ExtResource( 4 )]
+
+[node name="Weapon" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 12 )
