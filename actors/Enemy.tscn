@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://weapons/Weapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/topdown-shooter/Spritesheet/spritesheet_characters.png" type="Texture" id=2]
 [ext_resource path="res://actors/Enemy.gd" type="Script" id=3]
 [ext_resource path="res://actors/Health.tscn" type="PackedScene" id=4]
+[ext_resource path="res://actors/AI.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 24 )
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 140.0
+
 [node name="Enemy" type="KinematicBody2D"]
-position = Vector2( 80, 48 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -26,3 +29,19 @@ shape = SubResource( 1 )
 position = Vector2( 16, 12 )
 
 [node name="Health" parent="." instance=ExtResource( 4 )]
+
+[node name="AI" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="PlayerDetectionZone" type="Area2D" parent="AI" groups=[
+"enemy",
+]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI/PlayerDetectionZone"]
+shape = SubResource( 2 )
+
+[node name="PatrolTimer" type="Timer" parent="AI"]
+wait_time = 3.0
+[connection signal="body_entered" from="AI/PlayerDetectionZone" to="AI" method="_on_PlayerDetectionZone_body_entered"]
+[connection signal="body_exited" from="AI/PlayerDetectionZone" to="AI" method="_on_PlayerDetectionZone_body_exited"]
