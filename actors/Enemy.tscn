@@ -43,5 +43,7 @@ shape = SubResource( 2 )
 
 [node name="PatrolTimer" type="Timer" parent="AI"]
 wait_time = 3.0
+one_shot = true
 [connection signal="body_entered" from="AI/PlayerDetectionZone" to="AI" method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="AI/PlayerDetectionZone" to="AI" method="_on_PlayerDetectionZone_body_exited"]
+[connection signal="timeout" from="AI/PatrolTimer" to="AI" method="_on_PatrolTimer_timeout"]
