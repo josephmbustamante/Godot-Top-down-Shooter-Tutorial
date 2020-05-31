@@ -35,6 +35,12 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("shoot"):
 		weapon.shoot()
+	elif event.is_action_released("reload"):
+		weapon.start_reload()
+
+
+func reload():
+	weapon.start_reload()
 
 
 func get_team() -> int:
