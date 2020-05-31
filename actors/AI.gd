@@ -10,14 +10,14 @@ enum State {
 }
 
 
-onready var player_detection_zone = $PlayerDetectionZone
 onready var patrol_timer = $PatrolTimer
 
 
 var current_state: int = -1 setget set_state
 var actor: KinematicBody2D = null
-var player: Player = null
+var target: KinematicBody2D = null
 var weapon: Weapon = null
+var team: int = -1
 
 # PATROL STATE
 var origin: Vector2 = Vector2.ZERO
@@ -41,20 +41,21 @@ func _physics_process(delta: float) -> void:
 					actor_velocity = Vector2.ZERO
 					patrol_timer.start()
 		State.ENGAGE:
-			if player != null and weapon != null:
-				actor.rotate_toward(player.global_position)
-				var angle_to_player = actor.global_position.direction_to(player.global_position).angle()
-				if abs(actor.rotation - angle_to_player) < 0.1:
+			if target != null and weapon != null:
+				actor.rotate_toward(target.global_position)
+				var angle_to_target = actor.global_position.direction_to(target.global_position).angle()
+				if abs(actor.rotation - angle_to_target) < 0.1:
 					weapon.shoot()
 			else:
-				print("In the engage state but no weapon/player")
+				print("In the engage state but no weapon/target")
 		_:
 			print("Error: found a state for our enemy that should not exist")
 
 
-func initialize(actor, weapon: Weapon):
+func initialize(actor: KinematicBody2D, weapon: Weapon, team: int):
 	self.actor = actor
 	self.weapon = weapon
+	self.team = team
 
 
 func set_state(new_state: int):
@@ -70,18 +71,6 @@ func set_state(new_state: int):
 	emit_signal("state_changed", current_state)
 
 
-func _on_PlayerDetectionZone_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
-		set_state(State.ENGAGE)
-		player = body
-
-
-func _on_PlayerDetectionZone_body_exited(body: Node) -> void:
-	if player and body == player:
-		set_state(State.PATROL)
-		player = null
-
-
 func _on_PatrolTimer_timeout() -> void:
 	var patrol_range = 50
 	var random_x = rand_range(-patrol_range, patrol_range)
@@ -89,3 +78,15 @@ func _on_PatrolTimer_timeout() -> void:
 	patrol_location = Vector2(random_x, random_y) + origin
 	patrol_location_reached = false
 	actor_velocity = actor.velocity_toward(patrol_location)
+
+
+func _on_DetectionZone_body_entered(body: Node) -> void:
+	if body.has_method("get_team") and body.get_team() != team:
+		set_state(State.ENGAGE)
+		target = body
+
+
+func _on_DetectionZone_body_exited(body: Node) -> void:
+	if target and body == target:
+		set_state(State.PATROL)
+		target = null

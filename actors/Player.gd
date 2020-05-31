@@ -5,8 +5,13 @@ class_name Player
 export (int) var speed = 100
 
 
-onready var weapon = $Weapon
+onready var team = $Team
+onready var weapon: Weapon = $Weapon
 onready var health_stat = $Health
+
+
+func _ready() -> void:
+	weapon.initialize(team.team)
 
 
 func _physics_process(delta: float) -> void:
@@ -30,6 +35,10 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("shoot"):
 		weapon.shoot()
+
+
+func get_team() -> int:
+	return team.team
 
 
 func handle_hit():
