@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://actors/Player.gd"
 }, {
 "base": "Node2D",
+"class": "Team",
+"language": "GDScript",
+"path": "res://Team.gd"
+}, {
+"base": "Node2D",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://weapons/Weapon.gd"
@@ -27,6 +32,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Bullet": "",
 "Player": "",
+"Team": "",
 "Weapon": ""
 }
 
