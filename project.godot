@@ -9,10 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "AI",
+"language": "GDScript",
+"path": "res://actors/AI.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://actors/Actor.gd"
+}, {
 "base": "Area2D",
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://weapons/Bullet.gd"
+}, {
+"base": "Area2D",
+"class": "CapturableBase",
+"language": "GDScript",
+"path": "res://CapturableBase.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -30,7 +45,10 @@ _global_script_classes=[ {
 "path": "res://weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
+"AI": "",
+"Actor": "",
 "Bullet": "",
+"CapturableBase": "",
 "Player": "",
 "Team": "",
 "Weapon": ""
