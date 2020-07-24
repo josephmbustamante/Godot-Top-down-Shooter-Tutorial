@@ -36,4 +36,4 @@ func _on_Bullet_body_entered(body: Node) -> void:
 	if body.has_method("handle_hit"):
 		if body.has_method("get_team") and body.get_team() != team:
 			body.handle_hit()
-		queue_free()
+	queue_free()
