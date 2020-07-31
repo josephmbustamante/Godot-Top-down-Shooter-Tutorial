@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/roboto_mono_36.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.360784, 0.109804, 0.109804, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 974.0
+margin_bottom = 550.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_right = 924.0
+margin_bottom = 82.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="MiddleRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_top = 86.0
+margin_right = 924.0
+margin_bottom = 414.0
+mouse_filter = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="BottomRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_top = 418.0
+margin_right = 924.0
+margin_bottom = 500.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="HealthSection" type="CenterContainer" parent="MarginContainer/Rows/BottomRow"]
+margin_right = 200.0
+margin_bottom = 82.0
+mouse_filter = 2
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/Rows/BottomRow/HealthSection"]
+margin_top = 26.0
+margin_right = 200.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 200, 30 )
+mouse_filter = 2
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 50.0
+percent_visible = false
+
+[node name="AmmoSection" type="HBoxContainer" parent="MarginContainer/Rows/BottomRow"]
+margin_left = 204.0
+margin_right = 924.0
+margin_bottom = 82.0
+mouse_filter = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="CurrentAmmo" type="Label" parent="MarginContainer/Rows/BottomRow/AmmoSection"]
+margin_left = 558.0
+margin_top = 17.0
+margin_right = 602.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 1 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoSeparator" type="Label" parent="MarginContainer/Rows/BottomRow/AmmoSection"]
+margin_left = 606.0
+margin_top = 17.0
+margin_right = 672.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 1 )
+text = " / "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxAmmo" type="Label" parent="MarginContainer/Rows/BottomRow/AmmoSection"]
+margin_left = 676.0
+margin_top = 17.0
+margin_right = 720.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 1 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
