@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/roboto_mono_36.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/GUI.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.360784, 0.109804, 0.109804, 1 )
@@ -19,6 +20,7 @@ border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
 [node name="GUI" type="CanvasLayer"]
+script = ExtResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -76,8 +78,10 @@ rect_min_size = Vector2( 200, 30 )
 mouse_filter = 2
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
-value = 50.0
+value = 80.0
 percent_visible = false
+
+[node name="HealthTween" type="Tween" parent="MarginContainer/Rows/BottomRow/HealthSection"]
 
 [node name="AmmoSection" type="HBoxContainer" parent="MarginContainer/Rows/BottomRow"]
 margin_left = 204.0

@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 
+signal player_health_changed(new_health)
 signal died
 
 
@@ -57,6 +58,7 @@ func get_team() -> int:
 
 func handle_hit():
 	health_stat.health -= 20
+	emit_signal("player_health_changed", health_stat.health)
 	if health_stat.health <= 0:
 		die()
 
