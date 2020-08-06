@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CapturableBase.gd"
 }, {
+"base": "Node2D",
+"class": "Pathfinding",
+"language": "GDScript",
+"path": "res://Pathfinding.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -49,6 +54,7 @@ _global_script_class_icons={
 "Actor": "",
 "Bullet": "",
 "CapturableBase": "",
+"Pathfinding": "",
 "Player": "",
 "Team": "",
 "Weapon": ""

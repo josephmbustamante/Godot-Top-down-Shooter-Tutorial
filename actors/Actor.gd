@@ -5,6 +5,7 @@ class_name Actor
 signal died
 
 
+onready var collision_shape = $CollisionShape2D
 onready var health_stat = $Health
 onready var ai = $AI
 onready var weapon: Weapon = $Weapon

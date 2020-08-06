@@ -15,9 +15,20 @@ var enemy_unit_count: int = 0
 var team_to_capture: int = Team.TeamName.NEUTRAL
 
 
+onready var collision_shape = $CollisionShape2D
 onready var team = $Team
 onready var capture_timer = $CaptureTimer
 onready var sprite = $Sprite
+
+
+func get_random_position_within_capture_radius() -> Vector2:
+	var extents = collision_shape.shape.extents
+	var top_left = collision_shape.global_position - (extents / 2)
+
+	var x = rand_range(top_left.x, top_left.x + extents.x)
+	var y = rand_range(top_left.y, top_left.y + extents.y)
+
+	return Vector2(x, y)
 
 
 func _on_CapturableBase_body_entered(body: Node) -> void:

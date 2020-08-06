@@ -9,6 +9,7 @@ signal died
 export (int) var speed = 100
 
 
+onready var collision_shape = $CollisionShape2D
 onready var team = $Team
 onready var weapon: Weapon = $Weapon
 onready var health_stat = $Health

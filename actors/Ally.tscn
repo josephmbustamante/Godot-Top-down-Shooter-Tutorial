@@ -13,7 +13,9 @@ extents = Vector2( 24, 24 )
 [sub_resource type="CircleShape2D" id=2]
 radius = 140.0
 
-[node name="Ally" type="KinematicBody2D"]
+[node name="Ally" type="KinematicBody2D" groups=[
+"obstacles",
+]]
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]

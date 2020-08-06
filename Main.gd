@@ -10,6 +10,8 @@ onready var enemy_ai = $EnemyMapAI
 onready var bullet_manager = $BulletManager
 onready var camera = $Camera2D
 onready var gui = $GUI
+onready var ground = $Ground
+onready var pathfinding = $Pathfinding
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,9 +22,11 @@ func _ready() -> void:
 	var ally_respawns = $AllyRespawnPoints
 	var enemy_respawns = $EnemyRespawnPoints
 
+	pathfinding.create_navigation_map(ground)
+
 	var bases = capturable_base_manager.get_capturable_bases()
-	ally_ai.initialize(bases, ally_respawns.get_children())
-	enemy_ai.initialize(bases, enemy_respawns.get_children())
+	ally_ai.initialize(bases, ally_respawns.get_children(), pathfinding)
+	enemy_ai.initialize(bases, enemy_respawns.get_children(), pathfinding)
 
 	spawn_player()
 

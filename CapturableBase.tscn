@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/topdown-shooter/Tilesheet/tilesheet_complete.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 126.132, 105.733 )
+extents = Vector2( 250, 250 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 4 )
