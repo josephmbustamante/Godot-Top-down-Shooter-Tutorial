@@ -35,8 +35,9 @@ func connect_traversable_tiles(tiles: Array):
 		var id = get_id_for_point(tile)
 
 		# 0, 1, 2 -- -1, 0, 1
-		for point in [Vector2(0,1), Vector2(0,-1), Vector2(1,0), Vector2(-1,0)]:
-				var target = tile + point
+		for x in range(3):
+			for y in range(3):
+				var target = tile + Vector2(x - 1, y - 1)
 				var target_id = get_id_for_point(target)
 
 				if tile == target or not astar.has_point(target_id):
