@@ -9,7 +9,7 @@
 [ext_resource path="res://actors/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://CapturableBaseManager.gd" type="Script" id=8]
 [ext_resource path="res://UI/GUI.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Pathfinding.gd" type="Script" id=10]
+[ext_resource path="res://Pathfinding.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -625,8 +625,7 @@ position = Vector2( 117.103, 275.92 )
 current = true
 smoothing_enabled = true
 
-[node name="Pathfinding" type="Node2D" parent="."]
-script = ExtResource( 10 )
+[node name="Pathfinding" parent="." instance=ExtResource( 10 )]
 
 [node name="CapturableBaseManager" type="Node2D" parent="."]
 script = ExtResource( 8 )

@@ -2,6 +2,16 @@ extends Node2D
 class_name Pathfinding
 
 
+export (Color) var enabled_color
+export (Color) var disabled_color
+export (bool) var should_display_grid := false
+
+
+onready var grid = $Grid
+
+
+var grid_rects := {}
+
 var astar = AStar2D.new()
 var tilemap: TileMap
 var half_cell_size: Vector2
@@ -29,6 +39,20 @@ func add_traversable_tiles(tiles: Array):
 		var id = get_id_for_point(tile)
 		astar.add_point(id, tile)
 
+		if should_display_grid:
+			var rect := ColorRect.new()
+			grid.add_child(rect)
+
+			grid_rects[str(id)] = rect
+
+			rect.modulate = Color(1, 1, 1, 0.5)
+			rect.color = enabled_color
+
+			rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+			rect.rect_size = tilemap.cell_size
+			rect.rect_position = tilemap.map_to_world(tile)
+
 
 func connect_traversable_tiles(tiles: Array):
 	for tile in tiles:
@@ -49,6 +73,8 @@ func connect_traversable_tiles(tiles: Array):
 func update_navigation_map():
 	for point in astar.get_points():
 		astar.set_point_disabled(point, false)
+		if should_display_grid:
+			grid_rects[str(point)].color = enabled_color
 
 	var obstacles = get_tree().get_nodes_in_group("obstacles")
 
@@ -59,18 +85,15 @@ func update_navigation_map():
 				var id = get_id_for_point(tile)
 				if astar.has_point(id):
 					astar.set_point_disabled(id, true)
+					if should_display_grid:
+						grid_rects[str(id)].color = disabled_color
 		if obstacle is KinematicBody2D:
-			continue
-
-			# Keeping this commented out here - for the actual code, we'll avoid
-			# doing unit collision avoidance as part of our navigation changes.
-			# If you want this code, feel free to un-comment this, or check out the branch
-			# that keeps this in!
-
-			# var tile_coord = tilemap.world_to_map(obstacle.collision_shape.global_position)
-			# var id = get_id_for_point(tile_coord)
-			# if astar.has_point(id):
-				# astar.set_point_disabled(id, true)
+			var tile_coord = tilemap.world_to_map(obstacle.collision_shape.global_position)
+			var id = get_id_for_point(tile_coord)
+			if astar.has_point(id):
+				astar.set_point_disabled(id, true)
+				if should_display_grid:
+					grid_rects[str(id)].color = disabled_color
 
 
 func get_id_for_point(point: Vector2):
