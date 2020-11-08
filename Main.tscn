@@ -634,10 +634,10 @@ script = ExtResource( 8 )
 position = Vector2( 541.137, 255.519 )
 
 [node name="CapturableBase2" parent="CapturableBaseManager" instance=ExtResource( 6 )]
-position = Vector2( 1473.31, 258.369 )
+position = Vector2( 1534.98, 260.872 )
 
 [node name="CapturableBase3" parent="CapturableBaseManager" instance=ExtResource( 6 )]
-position = Vector2( 2251.89, 258.369 )
+position = Vector2( 2266.53, 253.735 )
 
 [node name="BulletManager" type="Node2D" parent="."]
 script = ExtResource( 4 )
@@ -647,6 +647,7 @@ team_name = 1
 unit = ExtResource( 5 )
 
 [node name="EnemyMapAI" parent="." instance=ExtResource( 3 )]
+base_capture_start_order = 1
 team_name = 2
 unit = ExtResource( 7 )
 

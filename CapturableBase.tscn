@@ -24,7 +24,7 @@ texture = SubResource( 2 )
 [node name="Team" parent="." instance=ExtResource( 2 )]
 
 [node name="CaptureTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 6.0
 one_shot = true
 [connection signal="body_entered" from="." to="." method="_on_CapturableBase_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_CapturableBase_body_exited"]
