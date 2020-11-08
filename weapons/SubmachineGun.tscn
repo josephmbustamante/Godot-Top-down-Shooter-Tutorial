@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://weapons/Weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/topdown-shooter/PNG/weapon_machine.png" type="Texture" id=2]
+
+[node name="SubmachineGun" instance=ExtResource( 1 )]
+semi_auto = false
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 2 )
+
+[node name="EndOfGun" parent="." index="1"]
+position = Vector2( 28, 0 )
+
+[node name="AttackCooldown" parent="." index="2"]
+wait_time = 0.1
+
+[node name="MuzzleFlash" parent="." index="3"]
+position = Vector2( 40, 0 )
