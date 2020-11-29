@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/menu_style.tres" type="StyleBox" id=1]
+[ext_resource path="res://UI/roboto_mono_36.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/PauseScreen.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.25098 )
+
+[node name="PauseScreen" type="CanvasLayer"]
+pause_mode = 2
+layer = 2
+script = ExtResource( 3 )
+
+[node name="Overlay" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenuContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenuContainer"]
+margin_left = 355.0
+margin_top = 160.0
+margin_right = 669.0
+margin_bottom = 440.0
+custom_styles/panel = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenuContainer/PanelContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 304.0
+margin_bottom = 270.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Rows" type="VBoxContainer" parent="PauseMenuContainer/PanelContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 274.0
+margin_bottom = 240.0
+custom_constants/separation = 20
+
+[node name="PauseTitle" type="Label" parent="PauseMenuContainer/PanelContainer/MarginContainer/Rows"]
+margin_right = 254.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 2 )
+text = "PAUSED"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="PauseMenuContainer/PanelContainer/MarginContainer/Rows"]
+margin_top = 68.0
+margin_right = 254.0
+margin_bottom = 72.0
+
+[node name="ContinueButton" type="Button" parent="PauseMenuContainer/PanelContainer/MarginContainer/Rows"]
+margin_top = 92.0
+margin_right = 254.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 2 )
+text = "CONTINUE"
+
+[node name="MainMenuButton" type="Button" parent="PauseMenuContainer/PanelContainer/MarginContainer/Rows"]
+margin_top = 166.0
+margin_right = 254.0
+margin_bottom = 220.0
+custom_fonts/font = ExtResource( 2 )
+text = " MAIN MENU "
+[connection signal="pressed" from="PauseMenuContainer/PanelContainer/MarginContainer/Rows/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="PauseMenuContainer/PanelContainer/MarginContainer/Rows/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

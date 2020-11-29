@@ -2,17 +2,10 @@
 
 [ext_resource path="res://UI/roboto_mono_36.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/roboto_mono_64.tres" type="DynamicFont" id=2]
-[ext_resource path="res://UI/GameOverScreen.gd" type="Script" id=3]
+[ext_resource path="res://UI/MainMenuScreen.gd" type="Script" id=3]
+[ext_resource path="res://UI/menu_style.tres" type="StyleBox" id=4]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 0, 0, 0, 1 )
-
-[node name="GameOverScreen" type="CanvasLayer"]
+[node name="MainMenuScreen" type="CanvasLayer"]
 pause_mode = 2
 script = ExtResource( 3 )
 
@@ -21,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0022
 margin_right = 1.0022
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -50,51 +43,40 @@ custom_constants/separation = 80
 margin_right = 924.0
 margin_bottom = 86.0
 custom_fonts/font = ExtResource( 2 )
-text = "GAME OVER"
+text = "TOP-DOWN SHOOTER"
 align = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Rows"]
 margin_top = 166.0
 margin_right = 924.0
-margin_bottom = 408.0
+margin_bottom = 314.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Rows/CenterContainer"]
-margin_left = 335.0
-margin_right = 589.0
-margin_bottom = 242.0
+margin_left = 368.0
+margin_right = 556.0
+margin_bottom = 148.0
 custom_constants/separation = 40
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RestartButton" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
-margin_right = 254.0
+[node name="PlayButton" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
+margin_right = 188.0
 margin_bottom = 54.0
 custom_fonts/font = ExtResource( 1 )
-text = " RESTART "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainMenuButton" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
-margin_top = 94.0
-margin_right = 254.0
-margin_bottom = 148.0
-custom_fonts/font = ExtResource( 1 )
-text = " MAIN MENU "
+text = "  PLAY  "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
-margin_top = 188.0
-margin_right = 254.0
-margin_bottom = 242.0
+margin_top = 94.0
+margin_right = 188.0
+margin_bottom = 148.0
 custom_fonts/font = ExtResource( 1 )
 text = "QUIT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
