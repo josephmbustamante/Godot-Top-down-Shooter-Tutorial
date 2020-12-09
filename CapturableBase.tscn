@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://UI/roboto_mono_36.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Team.tscn" type="PackedScene" id=2]
 [ext_resource path="res://CapturableBase.gd" type="Script" id=3]
 [ext_resource path="res://assets/topdown-shooter/Tilesheet/tilesheet_complete.png" type="Texture" id=4]
@@ -14,6 +15,8 @@ region = Rect2( 1484, 268, 40, 40 )
 [node name="CapturableBase" type="Area2D"]
 position = Vector2( 539.46, 267.255 )
 script = ExtResource( 3 )
+player_color = Color( 0.192157, 0.486275, 0.207843, 1 )
+enemy_color = Color( 0.337255, 0.360784, 0.643137, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -26,6 +29,31 @@ texture = SubResource( 2 )
 [node name="CaptureTimer" type="Timer" parent="."]
 wait_time = 6.0
 one_shot = true
+
+[node name="PlayerLabel" type="Label" parent="."]
+margin_left = -59.46
+margin_top = 20.745
+margin_right = -15.46
+margin_bottom = 68.745
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.454902, 0.670588, 0.466667, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyLabel" type="Label" parent="."]
+margin_left = 12.54
+margin_top = 20.745
+margin_right = 56.54
+margin_bottom = 68.745
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.513726, 0.533333, 0.772549, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="." to="." method="_on_CapturableBase_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_CapturableBase_body_exited"]
 [connection signal="timeout" from="CaptureTimer" to="." method="_on_CaptureTimer_timeout"]

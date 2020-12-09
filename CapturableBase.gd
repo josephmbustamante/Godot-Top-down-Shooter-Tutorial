@@ -19,6 +19,13 @@ onready var collision_shape = $CollisionShape2D
 onready var team = $Team
 onready var capture_timer = $CaptureTimer
 onready var sprite = $Sprite
+onready var player_label = $PlayerLabel
+onready var enemy_label = $EnemyLabel
+
+
+func _ready() -> void:
+	player_label.text = "0"
+	enemy_label.text = "0"
 
 
 func get_random_position_within_capture_radius() -> Vector2:
@@ -37,8 +44,10 @@ func _on_CapturableBase_body_entered(body: Node) -> void:
 
 		if body_team == Team.TeamName.ENEMY:
 			enemy_unit_count += 1
+			change_enemy_label()
 		elif body_team == Team.TeamName.PLAYER:
 			player_unit_count += 1
+			change_player_label()
 
 		check_whether_base_can_be_captured()
 
@@ -49,10 +58,20 @@ func _on_CapturableBase_body_exited(body: Node) -> void:
 
 		if body_team == Team.TeamName.ENEMY:
 			enemy_unit_count -= 1
+			change_enemy_label()
 		elif body_team == Team.TeamName.PLAYER:
 			player_unit_count -= 1
+			change_player_label()
 
 		check_whether_base_can_be_captured()
+
+
+func change_enemy_label():
+	enemy_label.text = str(enemy_unit_count)
+
+
+func change_player_label():
+	player_label.text = str(player_unit_count)
 
 
 func check_whether_base_can_be_captured():

@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 func rotate_toward(location: Vector2):
-	rotation = lerp(rotation, global_position.direction_to(location).angle(), 0.1)
+	rotation = lerp_angle(rotation, global_position.direction_to(location).angle(), 0.1)
 
 
 func velocity_toward(location: Vector2) -> Vector2:
