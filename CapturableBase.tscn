@@ -15,8 +15,6 @@ region = Rect2( 1484, 268, 40, 40 )
 [node name="CapturableBase" type="Area2D"]
 position = Vector2( 539.46, 267.255 )
 script = ExtResource( 3 )
-player_color = Color( 0.192157, 0.486275, 0.207843, 1 )
-enemy_color = Color( 0.337255, 0.360784, 0.643137, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
