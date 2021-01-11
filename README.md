@@ -3,6 +3,12 @@ This repository contains the source code for the Godot Top-down Shooter Tutorial
 
 [You can follow along with the series on YouTube.](https://www.youtube.com/watch?v=gXkkNSfxLRI&list=PLpwc3ughKbZexDyPexHN2MXLliKAovkpl&index=2&t=2s)
 
+## How to Use This Repository
+
+I make a separate commit at the end of each video in the series, so if you want to pull down the code at a specific point in the series you can find the specific commit for the video you want (I label each commit message with the video part) in the commits tab.
+
+If there is a bug or issue with the code, feel free to open an issue here or reach out on the Discord server (Discord is preferable since I check it more, but I'll eventually see it here).
+
 ## Join our Community Discord
 
 If you have questions about the tutorial or the code, or just want to connect with other developers, join our community Discord by following the link below.
