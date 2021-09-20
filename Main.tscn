@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://assets/topdown-shooter/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://CapturableBaseManager.gd" type="Script" id=8]
 [ext_resource path="res://UI/GUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Pathfinding.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ImpactManager.gd" type="Script" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -678,5 +679,8 @@ position = Vector2( 3058.37, 360.432 )
 
 [node name="Position2D5" type="Position2D" parent="EnemyRespawnPoints"]
 position = Vector2( 2833.99, 477.042 )
+
+[node name="ImpactManager" type="Node2D" parent="."]
+script = ExtResource( 11 )
 
 [node name="GUI" parent="." instance=ExtResource( 9 )]

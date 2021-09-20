@@ -12,7 +12,7 @@ onready var weapon: Weapon = $Weapon
 onready var team = $Team
 
 
-export (int) var speed = 100
+export (int) var speed = 150
 
 
 func _ready() -> void:
